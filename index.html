@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Fases del Proceso Creativo</title>
+	<link rel="stylesheet" href="/build/css/app.css">
+</head>
+<body>
+	<header class="header">
+		<div class="text-effect">
+			<h1 class="neon" data-text="6.- Fases del proceso creativo" contenteditable>6.- Fases del proceso creativo</h1>
+			<div class="gradient"></div>
+			<div class="spotlight"></div>
+		</div>
+	</header>
+
+	<div class="morph">
+		<div id="container">
+			<span id="text1"></span>
+			<span id="text2"></span>
+		</div>
+	
+		<svg id="filters">
+			<defs>
+				<filter id="threshold">
+					<feColorMatrix in="SourceGraphic" type="matrix" values="
+						1 0 0 0 0
+						0 1 0 0 0
+						0 0 1 0 0
+						0 0 0 255 -140" 
+					/>
+				</filter>
+			</defs>
+		</svg>
+	</div>
+
+	<section class="info">
+		<h2 class="hover">I.- El Cuestionamiento</h2>
+
+		<picture>
+			<source srcset=".avif" type="image/avif">
+			<source srcset=".webp" type="image/webp">
+			<img loading="lazy" src=".jpg" width="200" height="300" alt="">
+		</picture>
+
+	</section>
+
+
+	<script src="/build/js/app.js"></script>
+</body>
+</html>
