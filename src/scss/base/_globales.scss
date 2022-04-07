@@ -1,4 +1,5 @@
 @use 'variables' as v;
+@use 'base/mixins' as m;
 
 *, *:before, *:after {
     box-sizing: inherit;
@@ -29,4 +30,8 @@ a {
 img {
     max-width: 100%;
     height: auto;
+}
+.volver {
+    margin-top: 5rem;
+    @include m.boton(v.$rojo, v.$blanco);
 }

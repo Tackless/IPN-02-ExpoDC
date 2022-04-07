@@ -6,7 +6,9 @@ const autoprefixer = require('autoprefixer');
 const postcss    = require('gulp-postcss')
 const sourcemaps = require('gulp-sourcemaps')
 const cssnano = require('cssnano');
-const imagemin = require('gulp-imagemin'); // Minificar imagenes 
+const imageminGulp = require('gulp-imagemin'); // Minificar imagenes 
+// const imagemin = require('imagemin');
+// const imageminAvif = require('imagemin-avif');
 const cache = require('gulp-cache');
 const webp = require('gulp-webp');
 
@@ -47,8 +49,17 @@ function javascript( done ) {
 
 function imagenes( done ) {
     return src(paths.imagenes)
-        .pipe(cache(imagemin({ optimizationLevel: 3})))
+        .pipe(cache(imageminGulp({ optimizationLevel: 3})))
         .pipe(dest('build/img'));
+}
+
+function imagenesAvif( done ) {
+    imagemin([paths.imagenes], {
+        destination: 'build/img',
+        plugins: [
+            imageminAvif({quality: 50})
+        ]
+    });
 }
 
 function versionWebp( done ) {
@@ -67,4 +78,4 @@ function watchArchivos( done ) {
 
 exports.css = cssbuild;
 exports.watchArchivos = watchArchivos;
-exports.default = parallel(css, javascript,  imagenes, versionWebp,  watchArchivos ); 
+exports.default = parallel(css, javascript,  imagenes, versionWebp, watchArchivos ); 
