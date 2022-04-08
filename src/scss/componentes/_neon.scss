@@ -41,6 +41,18 @@ $color2: blue;
 	}
 }
 
+.neon-negro {
+	background: #353849;
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	h1 {
+		background: transparent;
+	}
+}
+
 // Position our two effect layers
 .gradient,
 .spotlight {

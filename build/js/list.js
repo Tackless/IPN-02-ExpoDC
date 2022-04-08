@@ -117,7 +117,7 @@ function checkAll() {
 
 	if (list.length == 6) {
 		check.style.backgroundColor = '#fff';
-		check.innerHTML = `<a href="index.html"><button class="custom-btn btn-7"><span>Actividad 3</span></button></a>`
+		check.innerHTML = `<a href="final.html"><button class="custom-btn btn-7"><span>Fin</span></button></a>`
 	}
 }
 
